@@ -54,9 +54,9 @@ def cluster_menu(choice, ip, x_api_session):
     elif choice == 2:
         
         #object creation and method call to create a cluster for a given vios
-        print("\nVIOS Selected by the user will be added as a node to cluster",
+        print(("\nVIOS Selected by the user will be added as a node to cluster",
               "The Physical disk for Virtual Repository disk and SSP are hardcoded.",
-              "The ssp will be created with 1 physical volume")
+              "The ssp will be created with 1 physical volume"))
         list_object = ListModule.ListModule()
         vios_content_type = "application/vnd.ibm.powervm.uom+xml;Type=VirtualIOServer"
         vios_list = list_object.listing("uom", ip,
@@ -65,8 +65,8 @@ def cluster_menu(choice, ip, x_api_session):
         if vios_list != None:
             print("\nAvailable Virtual IO Serevers :")
             for i in range (0,len(vios_list)):
-                print("%s.%s"%(i+1,vios_list[i].PartitionName.value()))
-            ch = int(input("\nselect a vios to be added to the cluster :"))
+                print(("%s.%s"%(i+1,vios_list[i].PartitionName.value())))
+            ch = int(eval(input("\nselect a vios to be added to the cluster :")))
             vios_id = vios_list[ch-1].Metadata.Atom.AtomID.value()
             create_cluster_object = CreateCluster.CreateCluster()
             create_cluster_object.create_cluster(ip, x_api_session, vios_id)
@@ -81,8 +81,8 @@ def cluster_menu(choice, ip, x_api_session):
         object_list = cluster_object.list_cluster(ip, x_api_session)
         if object_list != None:
             for i in range(0,len(object_list)):
-                print("%s.%s"%(i+1,object_list[i].ClusterName.value()))
-            ch = int(input("Select a cluster to be modified :"))
+                print(("%s.%s"%(i+1,object_list[i].ClusterName.value())))
+            ch = int(eval(input("Select a cluster to be modified :")))
             try:
                 selected_cluster = object_list[ch-1]
                 print_list = ['Add a node to cluster','Add a PhysicalVolume to ssp',
@@ -99,8 +99,8 @@ def cluster_menu(choice, ip, x_api_session):
                     if vios_list != None:
                         print("\nAvailable Virtual IO Serevers :")
                         for i in range (0,len(vios_list)):
-                            print("%s.%s"%(i+1,vios_list[i].PartitionName.value()))
-                        ch = int(input("\nselect a vios to be added to the cluster :"))
+                            print(("%s.%s"%(i+1,vios_list[i].PartitionName.value())))
+                        ch = int(eval(input("\nselect a vios to be added to the cluster :")))
                         vios_id = vios_list[ch-1].Metadata.Atom.AtomID.value()
                         modify_cluster_object.add_node(ip, x_api_session, selected_cluster, vios_id)
                         
@@ -112,7 +112,7 @@ def cluster_menu(choice, ip, x_api_session):
                     ssp_object = ListSharedStoragePool.ListSharedStoragePool()
                     cluster_id = selected_cluster.Metadata.Atom.AtomID.value()
                     ssp_object_list = ssp_object.list_shared_storagepool(ip, cluster_id, x_api_session)
-                    print("\nSharedStoragePool of the selected cluster :%s"%(ssp_object_list[0].StoragePoolName.value()))
+                    print(("\nSharedStoragePool of the selected cluster :%s"%(ssp_object_list[0].StoragePoolName.value())))
                     http_object = HTTPClient.HTTPClient("uom", ip, "ManagedSystem",
                                                         "application/vnd.ibm.powervm.uom+xml; type=VirtualIOServer",
                                                          x_api_session)
@@ -129,8 +129,8 @@ def cluster_menu(choice, ip, x_api_session):
                     try:
                         print("\nAvailable PhysicalVolumes  :")
                         for i in range(0,len(physicalvolumes)):
-                            print("%s.%s"%(i+1,physicalvolumes[i].VolumeName.value()))
-                        ch = int(input("\nselect a physicalvolume to be added :" ))
+                            print(("%s.%s"%(i+1,physicalvolumes[i].VolumeName.value())))
+                        ch = int(eval(input("\nselect a physicalvolume to be added :" )))
                         if ch > 0 and ch < len(physicalvolumes):
                             ssp_modify_object.add_physicalvolume(ip, x_api_session,
                                                                  ssp_object_list[0],
@@ -156,7 +156,7 @@ def cluster_menu(choice, ip, x_api_session):
                                                                          x_api_session)
                     lu_list = ssp_object.print_logicalunit(ssp_object_list[0])
                     if lu_list != None:
-                        logicalunit_name = input("Enter the name of the LogicalUnit to be deleted")
+                        logicalunit_name = eval(input("Enter the name of the LogicalUnit to be deleted"))
                         delete_logicalunit_object = DeleteLogicalUnit.DeleteLogicalUnit()
                         delete_logicalunit_object.delete_logicalunit(ip, ssp_object_list[0],
                                                                      x_api_session, logicalunit_name)
@@ -172,11 +172,11 @@ def cluster_menu(choice, ip, x_api_session):
                     lu_list = ssp_object.print_logicalunit(ssp_object_list[0])
                     if lu_list != None:
                         for i in range(0,len(lu_list)):
-                            print("%s.%s"%(i+1,lu_list[i].UnitName.value()))
-                        source_lu = int(input("select the source LU "))
+                            print(("%s.%s"%(i+1,lu_list[i].UnitName.value())))
+                        source_lu = int(eval(input("select the source LU ")))
                         try:
                             source_lu_udid = lu_list[source_lu-1].UniqueDeviceID.value()
-                            dest_lu = int(input("select the destination LU "))
+                            dest_lu = int(eval(input("select the destination LU ")))
                             dest_lu_udid = lu_list[dest_lu-1].UniqueDeviceID.value()
                             linked_clone_object = LULinkedClone.LULinkedClone()
                             linked_clone_object.lu_linked_clone(ip, cluster_id, x_api_session,
@@ -196,8 +196,8 @@ def cluster_menu(choice, ip, x_api_session):
         cluster_object_list = cluster_object.list_cluster(ip, x_api_session)
         if cluster_object_list != None:
             for i in range(0,len(cluster_object_list)):
-                print("%s.%s"%(i+1,cluster_object_list[i].ClusterName.value()))
-            ch = int(input("Select a cluster to be modified :"))
+                print(("%s.%s"%(i+1,cluster_object_list[i].ClusterName.value())))
+            ch = int(eval(input("Select a cluster to be modified :")))
             try:
                 selected_cluster = cluster_object_list[ch-1]
                 if selected_cluster != None:

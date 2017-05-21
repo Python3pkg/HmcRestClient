@@ -4,7 +4,7 @@
 # Generated 2015-04-16 01:56:39.730000 by PyXB version 1.2.4 using Python 2.7.0.final.0
 # Namespace http://www.w3.org/XML/1998/namespace/k2 [xmlns:xmlk2]
 
-from __future__ import unicode_literals
+
 import pyxb
 import pyxb.binding
 import pyxb.binding.saxer

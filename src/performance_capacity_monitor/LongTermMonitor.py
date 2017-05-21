@@ -119,7 +119,7 @@ class LongTermMonitor:
                         json_url=feedparser_LTM.entries[i].links[0].href
                         HTTP_object.HTTPGet(url=json_url)
                         log_object.log_debug(HTTP_object.response)
-                        print("\nThe recent json file of VirtualIOserver :%s "%(vios_names[j]))
+                        print(("\nThe recent json file of VirtualIOserver :%s "%(vios_names[j])))
                         JsonFilesDownload.json_file(feedparser_LTM.entries[i].title, HTTP_object.response.text)
                         break
         except TypeError:
@@ -154,7 +154,7 @@ class LongTermMonitor:
                 # The response of the get request is parsed using feedparser
                 feedparser_LTM = feedparser.parse(HTTP_object.response.text)
                 print("\n*******Options for Long Term Monitor Metrics*********\n")
-                option = input("This happens in a loop that repeats every 30 seconds \n 1.Download all the available json files \n 2.Download the recently generated json files \n 3.quit\n choose an option: ")
+                option = eval(input("This happens in a loop that repeats every 30 seconds \n 1.Download all the available json files \n 2.Download the recently generated json files \n 3.quit\n choose an option: "))
                 if option=="1":
                     flag = self.json_download_all_files(HTTP_object,feedparser_LTM,object_list)
                     if flag == 5:

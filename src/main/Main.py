@@ -32,7 +32,7 @@ def menu():
     back_to_menu()
     while True:
         try:
-            print ("\n\n", "Main Menu".center(50))
+            print(("\n\n", "Main Menu".center(50)))
             print_list = ['List Management Console Details', 'Managed System', 'Cluster',
                           'Performance Capacity Monitoring', 'Logoff', 'Help']
             #client choice for selecting root elements
@@ -46,7 +46,7 @@ def menu():
             elif client_choice == 2:
                 os.system("cls")
                 while True:
-                    print ("\n\n", "ManagedSystem Menu".center(50))
+                    print(("\n\n", "ManagedSystem Menu".center(50)))
                     print_list = ['Managed System Operations', 'VirtualSwitch',
                                   'VirtualNetwork', 'NetworkBridge',
                                   'Logical Partition', 'VirtualIOServer',
@@ -62,7 +62,7 @@ def menu():
                             os.system("cls")
                             break
                     elif choice == 9:
-                        print(open(directory+"/help/ManagedSystem/1ManagedSystem.txt").read())
+                        print((open(directory+"/help/ManagedSystem/1ManagedSystem.txt").read()))
                         back_to_menu()
                     elif choice == 10:
                         sys.exit(1)
@@ -73,7 +73,7 @@ def menu():
             elif client_choice == 3:
                 os.system("cls")
                 while True:
-                    print ("\n\n", "Cluster".center(50))
+                    print(("\n\n", "Cluster".center(50)))
                     print_list = ['List', 'create', 'Modify', 'Delete',
                                   'Return to MainMenu','Help','Exit']
                     choice = int(print_obj.print_on_screen(print_list))
@@ -83,7 +83,7 @@ def menu():
                     elif choice > 0 and choice < 5:
                          cluster_menu(choice, client.ip, client.x_api_session)
                     elif choice == 6:
-                        print(open(directory+"/help/Cluster.txt").read())
+                        print((open(directory+"/help/Cluster.txt").read()))
                         back_to_menu()
                     elif choice == 7:
                         sys.exit(1)
@@ -94,7 +94,7 @@ def menu():
             elif client_choice == 4:
                 os.system("cls")
                 while True:
-                    print ("\n\n", "Performance and Capacity Monitoring".center(50))
+                    print(("\n\n", "Performance and Capacity Monitoring".center(50)))
                     print_list = ['ManagedSystemPcmPreference', 'LongTermMonitor',
                                   'ShortTermMonitor', 'ProcessorMetrics',
                                   'Return to MainMenu','Help','Exit']
@@ -104,7 +104,7 @@ def menu():
                         os.system("cls")
                         break
                     elif choice == 6:
-                        print(open(directory+"/help/PerformanceCapacityMonitoring.txt").read())
+                        print((open(directory+"/help/PerformanceCapacityMonitoring.txt").read()))
                         back_to_menu()
                     elif choice > 0 and choice < 5:
                         performance_capacity_monitoring(choice, client.ip, client.x_api_session)

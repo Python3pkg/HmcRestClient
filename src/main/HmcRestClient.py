@@ -62,9 +62,9 @@ def get_selectedobject(object_list):
         try:
              
               for i in range(0,len(object_list)):
-                 print("%s.%s " % (i+1,object_list[i].PartitionName.value()))
+                 print(("%s.%s " % (i+1,object_list[i].PartitionName.value())))
               try:
-                  c = int(input("\nSelect any partition index the operation to be performed:"))
+                  c = int(eval(input("\nSelect any partition index the operation to be performed:")))
                   ch = c-1
                   return object_list[ch]
               except IndexError :
@@ -79,9 +79,9 @@ def get_selectedvirtualnetwork(object_list):
         """
         try:
               for i in range(0,len(object_list)):
-                 print("%s.%s " % (i+1,object_list[i].NetworkName.value()))
+                 print(("%s.%s " % (i+1,object_list[i].NetworkName.value())))
               try:
-                  c = int(input("\nSelect any VirtualNetwork index the operation to be performed:"))
+                  c = int(eval(input("\nSelect any VirtualNetwork index the operation to be performed:")))
                   ch = c-1
                   return object_list[ch]
               except IndexError :
@@ -96,7 +96,7 @@ def HMC_Help():
     """
     os.system("cls")
     while True:
-        print ("\n\n","Help".center(50))
+        print(("\n\n","Help".center(50)))
         print_list = ["ManagedSystem","LogicalPartition","VirtualIOServer","Cluster","Performance Capaity Monitoring","Return to Main Menu"]
         choice = int(print_obj.print_on_screen(print_list))
         directory = os.path.dirname(os.path.dirname(__file__))
@@ -104,21 +104,21 @@ def HMC_Help():
              path = directory+"/help/ManagedSystem"
              files = [f for f in os.listdir(path)if os.path.isfile(os.path.join(path,f))]
              for f in files :
-                 print(open(path+"/%s"%(f)).read())
+                 print((open(path+"/%s"%(f)).read()))
         elif choice == 2:
              path = directory+"/help/LogicalPartition"
              files = [f for f in os.listdir(path)if os.path.isfile(os.path.join(path,f))]
              for f in files :
-                 print(open(path+"/%s"%(f)).read())
+                 print((open(path+"/%s"%(f)).read()))
         elif choice == 3:
              path = directory+"/help/VirtualIOServer"
              files = [f for f in os.listdir(path)if os.path.isfile(os.path.join(path,f))]
              for f in files :
-                 print(open(path+"/%s"%(f)).read())
+                 print((open(path+"/%s"%(f)).read()))
         elif choice == 4:
-             print(open(directory+"/help/Cluster.txt").read())
+             print((open(directory+"/help/Cluster.txt").read()))
         elif choice == 5:
-             print(open(directory+"/help/PerformanceCapacityMonitoring.txt").read())
+             print((open(directory+"/help/PerformanceCapacityMonitoring.txt").read()))
         elif choice == 6:
              os.system("cls")
              return

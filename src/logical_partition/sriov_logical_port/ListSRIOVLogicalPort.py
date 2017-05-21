@@ -52,8 +52,8 @@ class ListSRIOVLogicalPort(object):
         Prints the details of the SRIOV Logical Port to the screen
         """
         print("\n")
-        print("AdapterID".ljust(35),":",objects.AdapterID.value())
-        print("Capacity".ljust(35),":",objects.ConfiguredCapacity.value())
-        print("AllowedVLANs".ljust(35),":",objects.AllowedVLANs.value())
-        print("ConfigurationID".ljust(35),":",objects.ConfigurationID.value())
-        print("PortVLANID".ljust(35),":",objects.PortVLANID.value())
+        print(("AdapterID".ljust(35),":",objects.AdapterID.value()))
+        print(("Capacity".ljust(35),":",objects.ConfiguredCapacity.value()))
+        print(("AllowedVLANs".ljust(35),":",objects.AllowedVLANs.value()))
+        print(("ConfigurationID".ljust(35),":",objects.ConfigurationID.value()))
+        print(("PortVLANID".ljust(35),":",objects.PortVLANID.value()))

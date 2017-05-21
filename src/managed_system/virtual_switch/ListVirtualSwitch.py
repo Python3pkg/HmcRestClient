@@ -67,6 +67,6 @@ class ListVirtualSwitch(object):
         """
         
         print("\n")
-        print("SwitchID".ljust(35),":",virtualswitch_object.SwitchID.value())
-        print("SwitchName".ljust(35),":",virtualswitch_object.SwitchName.value())
+        print(("SwitchID".ljust(35),":",virtualswitch_object.SwitchID.value()))
+        print(("SwitchName".ljust(35),":",virtualswitch_object.SwitchName.value()))
 

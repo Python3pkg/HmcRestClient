@@ -53,32 +53,32 @@ class ListLogicalPartition:
         """
         try:
             print("\n")
-            print("PartitionName".ljust(35),":",logicalpartition_object.PartitionName.value())
-            print("PartitionID".ljust(35),":",logicalpartition_object.PartitionID.value())
-            print("PartitionType".ljust(35),":",logicalpartition_object.PartitionType.value())
-            print("PartitionState".ljust(35),":",logicalpartition_object.PartitionState.value())
-            print("MigrationState".ljust(35),":",logicalpartition_object.MigrationState.value())
-            print("PartitionUUID".ljust(35),":",logicalpartition_object.PartitionUUID.value())
-            print("AssociatedManagedSystem".ljust(35),":",logicalpartition_object.AssociatedManagedSystem.href)
-            print("IsVirtualServiceAttentionLEDOn".ljust(35),":",logicalpartition_object.IsVirtualServiceAttentionLEDOn.value())
-            print("Maximum Memory".ljust(35),":",logicalpartition_object.PartitionMemoryConfiguration.MaximumMemory.value())
-            print("Desired Memory".ljust(35),":",logicalpartition_object.PartitionMemoryConfiguration.DesiredMemory.value())
-            print("Minimum Memory".ljust(35),":",logicalpartition_object.PartitionMemoryConfiguration.MinimumMemory.value())
-            print("HasDedicatedProcessors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.HasDedicatedProcessors.value())
+            print(("PartitionName".ljust(35),":",logicalpartition_object.PartitionName.value()))
+            print(("PartitionID".ljust(35),":",logicalpartition_object.PartitionID.value()))
+            print(("PartitionType".ljust(35),":",logicalpartition_object.PartitionType.value()))
+            print(("PartitionState".ljust(35),":",logicalpartition_object.PartitionState.value()))
+            print(("MigrationState".ljust(35),":",logicalpartition_object.MigrationState.value()))
+            print(("PartitionUUID".ljust(35),":",logicalpartition_object.PartitionUUID.value()))
+            print(("AssociatedManagedSystem".ljust(35),":",logicalpartition_object.AssociatedManagedSystem.href))
+            print(("IsVirtualServiceAttentionLEDOn".ljust(35),":",logicalpartition_object.IsVirtualServiceAttentionLEDOn.value()))
+            print(("Maximum Memory".ljust(35),":",logicalpartition_object.PartitionMemoryConfiguration.MaximumMemory.value()))
+            print(("Desired Memory".ljust(35),":",logicalpartition_object.PartitionMemoryConfiguration.DesiredMemory.value()))
+            print(("Minimum Memory".ljust(35),":",logicalpartition_object.PartitionMemoryConfiguration.MinimumMemory.value()))
+            print(("HasDedicatedProcessors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.HasDedicatedProcessors.value()))
             if logicalpartition_object.PartitionProcessorConfiguration.HasDedicatedProcessors.value():
-                print("Maximum Processors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
-                                      DedicatedProcessorConfiguration.MaximumProcessors.value())
-                print("Desired Processors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
-                                      DedicatedProcessorConfiguration.DesiredProcessors.value())
-                print("Minimum Processors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
-                                      DedicatedProcessorConfiguration.MinimumProcessors.value())
+                print(("Maximum Processors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
+                                      DedicatedProcessorConfiguration.MaximumProcessors.value()))
+                print(("Desired Processors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
+                                      DedicatedProcessorConfiguration.DesiredProcessors.value()))
+                print(("Minimum Processors".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
+                                      DedicatedProcessorConfiguration.MinimumProcessors.value()))
             else:
-                print("Maximum ProcessingUnits".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
-                                      SharedProcessorConfiguration.MaximumProcessingUnits.value())
-                print("Desired ProcessingUnits".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
-                                      SharedProcessorConfiguration.DesiredProcessingUnits.value())
-                print("Minimum ProcessingUnits".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
-                                      SharedProcessorConfiguration.MinimumProcessingUnits.value())
+                print(("Maximum ProcessingUnits".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
+                                      SharedProcessorConfiguration.MaximumProcessingUnits.value()))
+                print(("Desired ProcessingUnits".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
+                                      SharedProcessorConfiguration.DesiredProcessingUnits.value()))
+                print(("Minimum ProcessingUnits".ljust(35),":",logicalpartition_object.PartitionProcessorConfiguration.\
+                                      SharedProcessorConfiguration.MinimumProcessingUnits.value()))
         except Exception as e:
             self.log_object.log_info("Nonetype object found")
 

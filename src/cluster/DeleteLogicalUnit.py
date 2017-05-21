@@ -51,7 +51,7 @@ class DeleteLogicalUnit:
                 http_object.HTTPPost(xml, append=ssp_id)
                 log.log_debug("response status code for delete LU --- %s"%(http_object.response))
                 if http_object.response_b:
-                    print("\nLogical unit %s is removed successfully"%(logicalunit_name))
+                    print(("\nLogical unit %s is removed successfully"%(logicalunit_name)))
                     log.log_debug("Logical unit %s is removed successfully"%(logicalunit_name))
                 return
         log.log_error("\nProvided LogicalUnit name is not available")

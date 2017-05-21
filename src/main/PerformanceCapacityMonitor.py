@@ -54,7 +54,7 @@ def performance_capacity_monitoring(n1, ip, x_api_session):
                                                                            managedsystem_uuid,
                                                                            x_api_session)
             while True:
-                print ("\n\n","ManagedSystemPcmPreference".center(50))
+                print(("\n\n","ManagedSystemPcmPreference".center(50)))
                 print_list = ['Get ManagedSystemPcmPreference','Set/Update ManagedSystemPcmPreference','Return to PCM Menu']
                 #select any performance_capacity_monitoring operation
                 x = int(print_obj.print_on_screen(print_list) )

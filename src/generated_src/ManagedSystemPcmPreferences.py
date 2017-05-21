@@ -4,7 +4,7 @@
 # Generated 2015-04-16 01:10:38.765000 by PyXB version 1.2.4 using Python 2.7.0.final.0
 # Namespace http://www.ibm.com/xmlns/systems/power/firmware/pcm/mc/2012_10/
 
-from __future__ import unicode_literals
+
 import pyxb
 import pyxb.binding
 import pyxb.binding.saxer

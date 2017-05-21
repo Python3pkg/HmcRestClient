@@ -29,8 +29,8 @@ class SelectManagedSystem:
         object_list = managedsystem_object.list_ManagedSystem(ip, x_api_session)
         try:
             for i in range(0,len(object_list)):
-                print("%s.%s"%(i+1,object_list[i].SystemName.value()))
-            c = int(input("\nSelect any Managed System:"))
+                print(("%s.%s"%(i+1,object_list[i].SystemName.value())))
+            c = int(eval(input("\nSelect any Managed System:")))
             if c<=len(object_list) and c>0:
                 self.ch = c-1
                 self.managedsystem_uuid = object_list[self.ch].\

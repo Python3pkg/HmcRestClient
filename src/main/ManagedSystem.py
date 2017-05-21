@@ -63,7 +63,7 @@ def managedsystem_children(choice, ip, x_api_session):
     if SelectManagedSystem_obj.managedsystem_uuid != "":
         if choice == 1:
            while True:
-                print ("\n\n","ManagedSystem Operations".center(50))
+                print(("\n\n","ManagedSystem Operations".center(50)))
                 print_list = ['List','Poweron','Poweroff',
                               'Remove Connection',
                               'Return to ManagedSystem Menu',
@@ -104,7 +104,7 @@ def managedsystem_children(choice, ip, x_api_session):
                     os.system("cls")
                     return False
                 elif x == 7:
-                    print(open(directory+"/help/ManagedSystem/ManagedSystemOperations.txt").read())
+                    print((open(directory+"/help/ManagedSystem/ManagedSystemOperations.txt").read()))
                 elif x == 8:
                     sys.exit(1)
                 else:
@@ -113,7 +113,7 @@ def managedsystem_children(choice, ip, x_api_session):
                           
         elif choice == 2:
             while True:
-                print ("\n\n","VirtualSwitch".center(50))
+                print(("\n\n","VirtualSwitch".center(50)))
                 print_list = ['List','Create','Modify',
                               'Return to ManagedSystem Menu','Return to MainMenu','Help','Exit']
                 #select any VirtualSwitch operation
@@ -146,9 +146,9 @@ def managedsystem_children(choice, ip, x_api_session):
                     virtualswitch_bool = False
                     try:
                           for i in range(0,len(switch_object_list)):
-                             print("%s.%s " % (i+1,switch_object_list[i].SwitchName.value()))
+                             print(("%s.%s " % (i+1,switch_object_list[i].SwitchName.value())))
                           try:
-                              c = int(input("\nSelect any Virtualswitch index the operation to be performed:"))
+                              c = int(eval(input("\nSelect any Virtualswitch index the operation to be performed:")))
                               ch = c-1
                               selected_switch_object = switch_object_list[ch]
                               print("\nName of the Virtual Switch will be Modified \n")
@@ -172,7 +172,7 @@ def managedsystem_children(choice, ip, x_api_session):
                     os.system("cls")
                     return False
                 elif x1 == 6:
-                    print(open(directory+"/help/ManagedSystem/VirtualSwitch.txt").read())
+                    print((open(directory+"/help/ManagedSystem/VirtualSwitch.txt").read()))
                 elif x1 == 7:
                     sys.exit(1)
                 else:
@@ -182,7 +182,7 @@ def managedsystem_children(choice, ip, x_api_session):
         elif choice == 3:
             #virtual network operations
             while True:
-                print ("\n\n","VirtualNetwork".center(50))
+                print(("\n\n","VirtualNetwork".center(50)))
                 print_list = ['List','Create','Modify',
                               'Return to ManagedSystem Menu',
                               'Return to MainMenu','Help','Exit']
@@ -203,9 +203,9 @@ def managedsystem_children(choice, ip, x_api_session):
                                                                                                  x_api_session)
                     try:
                           for i in range(0,len(switch_object_list)):
-                             print("%s.%s " % (i+1,switch_object_list[i].SwitchName.value()))
+                             print(("%s.%s " % (i+1,switch_object_list[i].SwitchName.value())))
                           try:
-                              c = int(input("\nSelect any Virtualswitch index the operation to be performed:"))
+                              c = int(eval(input("\nSelect any Virtualswitch index the operation to be performed:")))
                               ch = c-1
                               selected_switch_object = switch_object_list[ch]
                               print("\nVirtual Network will be created on the Selected Switch.VLAN ID is Hardcoded\n")
@@ -246,7 +246,7 @@ def managedsystem_children(choice, ip, x_api_session):
                     os.system("cls")
                     return False
                 elif x1 == 6:
-                    print(open(directory+"/help/ManagedSystem/VirtualNetwork.txt").read())
+                    print((open(directory+"/help/ManagedSystem/VirtualNetwork.txt").read()))
                 elif x1 == 7:
                     sys.exit(1)
                 else:
@@ -256,7 +256,7 @@ def managedsystem_children(choice, ip, x_api_session):
         elif choice == 4:
             #Network bridge operations
             while True:
-                print ("\n\n","NetworkBridge".center(50))
+                print(("\n\n","NetworkBridge".center(50)))
                 print_list = ['List','Create','Modify',
                               'Return to ManagedSystem Menu',
                               'Return to MainMenu','Help','Exit']
@@ -290,8 +290,8 @@ def managedsystem_children(choice, ip, x_api_session):
                     if selected_virtualnetwork_object != None:
                         print("\nselect a VirtualIOServer on which Trunk Adapter to be created")
                         selected_vios_object = get_selectedobject(vios_object_list)
-                        print("\nNetwork Bridge will be created with one Load Group containing one Trunk Adapter",
-                              "of selected virtual network\n")
+                        print(("\nNetwork Bridge will be created with one Load Group containing one Trunk Adapter",
+                              "of selected virtual network\n"))
                         if selected_vios_object != None:
                             vios_id = selected_vios_object.Metadata.Atom.AtomID.value()
                             virtualnetwork_id = selected_virtualnetwork_object.Metadata.\
@@ -317,12 +317,12 @@ def managedsystem_children(choice, ip, x_api_session):
                                                                      x_api_session)
                     
                     for i in range(0,len(object_list)):
-                         print("%s.NetworkBridge PortVLANID %s " % (i+1,object_list[i].PortVLANID.value()))
+                         print(("%s.NetworkBridge PortVLANID %s " % (i+1,object_list[i].PortVLANID.value())))
                     try:
-                              c = int(input("\nSelect any NetworkBridge the operation to be performed:"))
+                              c = int(eval(input("\nSelect any NetworkBridge the operation to be performed:")))
                               ch = c-1
                               selected_networkbridge_object = object_list[ch]
-                              option = int(input("\n1.Add Additional VLANID to existing TrunkAdapter\n2.Add a New LoadGroup\nselect an option for modification :"))
+                              option = int(eval(input("\n1.Add Additional VLANID to existing TrunkAdapter\n2.Add a New LoadGroup\nselect an option for modification :")))
                               if option > 0 and option < 3:
                                   virtualnetwork_object = ListVirtualNetwork.ListVirtualNetwork()
                                   virtualnetwork_object_list = virtualnetwork_object.list_VirtualNetwork(ip,
@@ -364,7 +364,7 @@ def managedsystem_children(choice, ip, x_api_session):
                     os.system("cls")
                     return False
                 elif x1 == 6:
-                    print(open(directory+"/help/ManagedSystem/NetworkBridge.txt").read())
+                    print((open(directory+"/help/ManagedSystem/NetworkBridge.txt").read()))
                 elif x1 == 7:
                     sys.exit(1)
                 else:
@@ -373,7 +373,7 @@ def managedsystem_children(choice, ip, x_api_session):
                 
         elif choice == 5:   
             while True:
-                print ("\n\n","LogicalPartition Menu".center(50))
+                print(("\n\n","LogicalPartition Menu".center(50)))
                 print_list = ['LogicalPartition operations','LogicalPartitionProfile',
                             'ClientNetworkAdapter','VirtualSCSIClientAdapter',
                             'VirtualFibreChannelClientAdapter',
@@ -398,7 +398,7 @@ def managedsystem_children(choice, ip, x_api_session):
                     elif k == 3:
                         return False
                 elif n == 9:
-                    print(open(directory+"/help/LogicalPartition/1LogicalPartition.txt").read())
+                    print((open(directory+"/help/LogicalPartition/1LogicalPartition.txt").read()))
                     back_to_menu()
                 elif n == 10 :
                     sys.exit(1)
@@ -409,7 +409,7 @@ def managedsystem_children(choice, ip, x_api_session):
             
         elif choice == 6:
             while True:
-                print ("\n\n","Virtual IO Server Menu".center(50))
+                print(("\n\n","Virtual IO Server Menu".center(50)))
                 print_list = ['VirtualIOServer operations',
                               'LogicalPartitionProfile','VolumeGroup',
                               'create vscsi mappings',
@@ -436,7 +436,7 @@ def managedsystem_children(choice, ip, x_api_session):
                         os.system("cls")
                         return False
                 elif n == 8:
-                    print(open(directory+"/help/VirtualIOServer/1VirtualIOServer.txt").read())
+                    print((open(directory+"/help/VirtualIOServer/1VirtualIOServer.txt").read()))
                     back_to_menu()                
                 elif n == 9:
                     sys.exit(1)
@@ -446,7 +446,7 @@ def managedsystem_children(choice, ip, x_api_session):
                 
         elif choice == 7:
             while True:
-               print ("\n\n","SRIOV Ethernet Physical Port ".center(50))
+               print(("\n\n","SRIOV Ethernet Physical Port ".center(50)))
                print_list = ['List SRIOV Ethernet Physical Port',
                              'Change Adapter Mode', 'Return to ManagedSystem Menu',
                              'Return to MainMenu','Help','Exit']
@@ -470,8 +470,8 @@ def managedsystem_children(choice, ip, x_api_session):
                                       AssociatedSystemIOConfiguration.SRIOVAdapters.IOAdapterChoice
                        for i in range(0,len(sriovadapter)):
                            sriov = sriovadapter[i].SRIOVAdapter
-                           print("%s.SRIOV AdapterID %s"%(i+1,sriov.SRIOVAdapterID.value()))
-                       ch = int(input("select a SRIOV adapter to change its mode "))
+                           print(("%s.SRIOV AdapterID %s"%(i+1,sriov.SRIOVAdapterID.value())))
+                       ch = int(eval(input("select a SRIOV adapter to change its mode ")))
                        change_mode = ChangeAdapterMode.ChangeSRIOVAdapterMode()
                        adapter_object = sriovadapter[ch-1].SRIOVAdapter
                        change_mode.change_sriov_adaptermode(ip,
@@ -487,7 +487,7 @@ def managedsystem_children(choice, ip, x_api_session):
                  os.system("cls")
                  return False
                elif n == 8:
-                    print(open(directory+"/help/ManagedSystem/SRIOVPhysicalPort.txt").read())              
+                    print((open(directory+"/help/ManagedSystem/SRIOVPhysicalPort.txt").read()))              
                elif n == 6:
                    sys.exit(1)
                else:

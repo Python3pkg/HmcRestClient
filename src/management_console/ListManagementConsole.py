@@ -57,22 +57,22 @@ class ListManagementConsole(object):
                 management console
         """
         print("\n")
-        print("ManagementConsoleName".ljust(35), ":",
-              managementconsole_object.ManagementConsoleName.value())
-        print("BaseVersion".ljust(35), ":", managementconsole_object.BaseVersion.value())
-        print("Management Console id".ljust(35), ":",
-              managementconsole_object.Metadata.Atom.AtomID.value())
+        print(("ManagementConsoleName".ljust(35), ":",
+              managementconsole_object.ManagementConsoleName.value()))
+        print(("BaseVersion".ljust(35), ":", managementconsole_object.BaseVersion.value()))
+        print(("Management Console id".ljust(35), ":",
+              managementconsole_object.Metadata.Atom.AtomID.value()))
         #print("\nNETWORK INTERFACES\n")
         try:
             for entry in range(0, len(managementconsole_object.NetworkInterfaces.\
                                       ManagementConsoleNetworkInterface)):
-                print ("MANAGEMENT CONSOLE NETWORK INTERFACE".ljust(35), ":", entry)
-                print ("InterfaceName".ljust(35), ":",managementconsole_object.\
+                print(("MANAGEMENT CONSOLE NETWORK INTERFACE".ljust(35), ":", entry))
+                print(("InterfaceName".ljust(35), ":",managementconsole_object.\
                        NetworkInterfaces.ManagementConsoleNetworkInterface[entry].\
-                       InterfaceName.value())
-                print ("NetworkAddress".ljust(35), ":", managementconsole_object.\
+                       InterfaceName.value()))
+                print(("NetworkAddress".ljust(35), ":", managementconsole_object.\
                        NetworkInterfaces.ManagementConsoleNetworkInterface[entry].\
-                       NetworkAddress.value())
+                       NetworkAddress.value()))
         except Exception:
             pass
 

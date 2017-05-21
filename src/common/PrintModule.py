@@ -21,8 +21,8 @@ class PrintModule:
         i = 0
         print("=============================================================")
         for i in range(0,n):                          
-            print("%d. %s"%(i+1,lis[i]))
-        choice = input("\nEnter your Choice: ")
+            print(("%d. %s"%(i+1,lis[i])))
+        choice = eval(input("\nEnter your Choice: "))
         return choice
     
     

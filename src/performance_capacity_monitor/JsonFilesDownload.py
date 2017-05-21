@@ -36,7 +36,7 @@ def json_file(filename, file_content):
     file_object = open(full_json_filename,'w')
     file_object.write(json_file_content)
     file_object.close()
-    print("JSON file Downloaded at %s" %(full_json_filename))
+    print(("JSON file Downloaded at %s" %(full_json_filename)))
     
    
 

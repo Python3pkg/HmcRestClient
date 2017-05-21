@@ -57,7 +57,7 @@ class ListClientNetworkAdapter:
         prints the details of the given client network adapter given
         """
         print("\n")
-        print("VirtualSlotNumber".ljust(35),":",objects.VirtualSlotNumber.value())
-        print("VirtualSwitchID".ljust(35),":",objects.VirtualSwitchID.value())
-        print("PortVLANID".ljust(35),":",objects.PortVLANID.value())
-        print("RequiredAdapter".ljust(35),":",objects.RequiredAdapter.value())                                
+        print(("VirtualSlotNumber".ljust(35),":",objects.VirtualSlotNumber.value()))
+        print(("VirtualSwitchID".ljust(35),":",objects.VirtualSwitchID.value()))
+        print(("PortVLANID".ljust(35),":",objects.PortVLANID.value()))
+        print(("RequiredAdapter".ljust(35),":",objects.RequiredAdapter.value()))                                

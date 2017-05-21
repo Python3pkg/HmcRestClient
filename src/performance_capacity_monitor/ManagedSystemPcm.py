@@ -71,7 +71,7 @@ class ManagedSystemPcmPreference:
         get_managedsystempcmpreference_object1 = self.get_managedsystempcmpreference()
         pyxb.RequireValidWhenGenerating(True)
         print("options for set/update Managed System Pcm Preferences \n")
-        option=input(" Choose an option \n 1.ComputeLTM \n 2.ComputeLTM + Long term monitor \n 3.ComputeLTM + Long term monitor + AggregationEnabled \n")
+        option=eval(input(" Choose an option \n 1.ComputeLTM \n 2.ComputeLTM + Long term monitor \n 3.ComputeLTM + Long term monitor + AggregationEnabled \n"))
  
         if option=="1":
             get_managedsystempcmpreference_object1.ComputeLTMEnabled = "true"
@@ -95,7 +95,7 @@ class ManagedSystemPcmPreference:
             get_managedsystempcmpreference_object1.ComputeLTMEnabled.ksv = "V1_1_0"
 
         
-        short_term_monitor = input("do u want to enable ShortTermMonitorEnabled ? y/n\n")
+        short_term_monitor = eval(input("do u want to enable ShortTermMonitorEnabled ? y/n\n"))
         if short_term_monitor == "y":
             get_managedsystempcmpreference_object1.ShortTermMonitorEnabled = "true"
         else:
@@ -126,10 +126,10 @@ class ManagedSystemPcmPreference:
 
         '''
 
-        print("LongTermMonitorEnabled   :", get_pcm_object.LongTermMonitorEnabled.value())
-        print("AggregationEnabled       :", get_pcm_object.AggregationEnabled.value())
-        print("ShortTermMonitorEnabled  :", get_pcm_object.ShortTermMonitorEnabled.value())
-        print("ComputeLTMEnabled        :", get_pcm_object.ComputeLTMEnabled.value())
+        print(("LongTermMonitorEnabled   :", get_pcm_object.LongTermMonitorEnabled.value()))
+        print(("AggregationEnabled       :", get_pcm_object.AggregationEnabled.value()))
+        print(("ShortTermMonitorEnabled  :", get_pcm_object.ShortTermMonitorEnabled.value()))
+        print(("ComputeLTMEnabled        :", get_pcm_object.ComputeLTMEnabled.value()))
          
 
 

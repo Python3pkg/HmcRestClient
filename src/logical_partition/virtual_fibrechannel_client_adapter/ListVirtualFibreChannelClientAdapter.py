@@ -55,9 +55,9 @@ class ListVirtualFibreChannelClientAdapter:
         print the details of the given virtual fibre channel adapter
         """
         print("\n")
-        print("LocalPartitionID".ljust(35),":",objects.LocalPartitionID.value())
-        print("VirtualSlotNumber".ljust(35),":",objects.VirtualSlotNumber.value())
-        print("RequiredAdapter".ljust(35),":",objects.RequiredAdapter.value())
-        print("ConnectingPartitionID".ljust(35),":",objects.ConnectingPartitionID.value())
-        print("ConnectingVirtualSlotNumber".ljust(35),":",objects.ConnectingVirtualSlotNumber.value())
-        print("WWPNs".ljust(35),":",objects.WWPNs.value())
+        print(("LocalPartitionID".ljust(35),":",objects.LocalPartitionID.value()))
+        print(("VirtualSlotNumber".ljust(35),":",objects.VirtualSlotNumber.value()))
+        print(("RequiredAdapter".ljust(35),":",objects.RequiredAdapter.value()))
+        print(("ConnectingPartitionID".ljust(35),":",objects.ConnectingPartitionID.value()))
+        print(("ConnectingVirtualSlotNumber".ljust(35),":",objects.ConnectingVirtualSlotNumber.value()))
+        print(("WWPNs".ljust(35),":",objects.WWPNs.value()))

@@ -55,9 +55,9 @@ class ListVirtualSCSIClientAdapter:
         print the details of the given virtual SCSI adapter
         """
         print("\n")
-        print("LocalPartitionID".ljust(35),":",objects.LocalPartitionID.value())
-        print("VirtualSlotNumber".ljust(35),":",objects.VirtualSlotNumber.value())
-        print("RequiredAdapter".ljust(35),":",objects.RequiredAdapter.value())
-        print("RemoteLogicalPartitionID".ljust(35),":",objects.RemoteLogicalPartitionID.value())
-        print("RemoteSlotNumber".ljust(35),":",objects.RemoteSlotNumber.value())
+        print(("LocalPartitionID".ljust(35),":",objects.LocalPartitionID.value()))
+        print(("VirtualSlotNumber".ljust(35),":",objects.VirtualSlotNumber.value()))
+        print(("RequiredAdapter".ljust(35),":",objects.RequiredAdapter.value()))
+        print(("RemoteLogicalPartitionID".ljust(35),":",objects.RemoteLogicalPartitionID.value()))
+        print(("RemoteSlotNumber".ljust(35),":",objects.RemoteSlotNumber.value()))
               

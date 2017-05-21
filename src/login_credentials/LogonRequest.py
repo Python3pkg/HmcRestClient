@@ -40,8 +40,8 @@ class Logon(object):
         ip address of the system
         """
         while True:
-            ip = input("Enter IP address of HMC: ")
-            username = input("Enter username for HMC: ")
+            ip = eval(input("Enter IP address of HMC: "))
+            username = eval(input("Enter username for HMC: "))
             password = getpass.getpass("Enter password for HMC: ")
             self.root = 'Logon'
             #PAYLOAD DATA FOR LOGON REQUEST.

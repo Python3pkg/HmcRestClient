@@ -60,4 +60,4 @@ class JobStatus(object):
                         except IndexError:
                             log.log_error("An error occured while performing job request")
                         break
-            print("Job Status :",job_status)
+            print(("Job Status :",job_status))

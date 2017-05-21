@@ -55,22 +55,22 @@ class ListSharedStoragePool:
         prints the details of shared storage pool
         """
         print("SharedStoragePool :\n-------------------")
-        print("StoragePoolName".ljust(35),":",objects.StoragePoolName.value())
-        print("Capacity".ljust(35),":",objects.Capacity.value())
-        print("FreeSpace".ljust(35),":",objects.FreeSpace.value())
-        print("AlertThreshold".ljust(35),":",objects.AlertThreshold.value())
+        print(("StoragePoolName".ljust(35),":",objects.StoragePoolName.value()))
+        print(("Capacity".ljust(35),":",objects.Capacity.value()))
+        print(("FreeSpace".ljust(35),":",objects.FreeSpace.value()))
+        print(("AlertThreshold".ljust(35),":",objects.AlertThreshold.value()))
         print("\nPhysicalVolumes in SharedStoragePool  :\n----------------------------------------")
         for physicalvolume in objects.PhysicalVolumes.PhysicalVolume:
-            print("".ljust(35),physicalvolume.VolumeName.value())
+            print(("".ljust(35),physicalvolume.VolumeName.value()))
         self.print_logicalunit(objects)
 
     def print_logicalunit(self,objects):
         if objects.LogicalUnits.LogicalUnit != []:
             print("\nAvailable LogicalUnits :\n-----------------------")
             for logicalunit in objects.LogicalUnits.LogicalUnit:
-                print("Name".ljust(35),":",logicalunit.UnitName.value())
-                print("Capacity".ljust(35),":",logicalunit.UnitCapacity.value())
-                print("UDID".ljust(35),":",logicalunit.UniqueDeviceID.value())
+                print(("Name".ljust(35),":",logicalunit.UnitName.value()))
+                print(("Capacity".ljust(35),":",logicalunit.UnitCapacity.value()))
+                print(("UDID".ljust(35),":",logicalunit.UniqueDeviceID.value()))
                 print()
             return objects.LogicalUnits.LogicalUnit
         else :

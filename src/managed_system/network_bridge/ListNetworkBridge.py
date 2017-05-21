@@ -64,22 +64,22 @@ class ListNetworkBridge:
         """
         
         print("\n")
-        print("FailoverEnabled".ljust(35),":",objects.FailoverEnabled.value())
-        print("LoadBalancingEnabled".ljust(35),":",objects.LoadBalancingEnabled.value())
-        print("PortVLANID".ljust(35),":",objects.PortVLANID.value())
+        print(("FailoverEnabled".ljust(35),":",objects.FailoverEnabled.value()))
+        print(("LoadBalancingEnabled".ljust(35),":",objects.LoadBalancingEnabled.value()))
+        print(("PortVLANID".ljust(35),":",objects.PortVLANID.value()))
         print("\nAvailable LoadGroups:")
         for loadgroup in objects.LoadGroups.LoadGroup:
-            print("LoadGroup PortVLANID".ljust(35),":",loadgroup.PortVLANID.value())
+            print(("LoadGroup PortVLANID".ljust(35),":",loadgroup.PortVLANID.value()))
             print("Available TrunkAdapters in LoadGroup :")
             for trunkadapter in loadgroup.TrunkAdapters.TrunkAdapter:
-                print("TrunkAdapter PortVLANID".ljust(35),":",trunkadapter.PortVLANID.value())
-                print("DeviceName".ljust(35),":",trunkadapter.DeviceName.value())
-                print("TrunkPriority".ljust(35),":",trunkadapter.TrunkPriority.value())
+                print(("TrunkAdapter PortVLANID".ljust(35),":",trunkadapter.PortVLANID.value()))
+                print(("DeviceName".ljust(35),":",trunkadapter.DeviceName.value()))
+                print(("TrunkPriority".ljust(35),":",trunkadapter.TrunkPriority.value()))
                 print("\n")
         print("SharedEthernetAdapter :")
         for sharedethernetadapter in objects.SharedEthernetAdapters.SharedEthernetAdapter:
-            print("Backing device type".ljust(35),":",
-                  sharedethernetadapter.BackingDeviceChoice.EthernetBackingDevice.DeviceType.value())
-            print("Backing device name".ljust(35),":",
-                  sharedethernetadapter.BackingDeviceChoice.EthernetBackingDevice.DeviceName.value())
+            print(("Backing device type".ljust(35),":",
+                  sharedethernetadapter.BackingDeviceChoice.EthernetBackingDevice.DeviceType.value()))
+            print(("Backing device name".ljust(35),":",
+                  sharedethernetadapter.BackingDeviceChoice.EthernetBackingDevice.DeviceName.value()))
             print("\n")

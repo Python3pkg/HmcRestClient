@@ -64,10 +64,10 @@ class ListVirtualNetwork(object):
         """
         
         print("\n")
-        print("NetworkName".ljust(35),":",virtualnetwork_object.NetworkName.value())
-        print("NetworkVLANID".ljust(35),":",virtualnetwork_object.NetworkVLANID.value())
-        print("VswitchID".ljust(35),":",virtualnetwork_object.VswitchID.value())
-        print("TaggedNetwork".ljust(35),":",virtualnetwork_object.TaggedNetwork.value())
+        print(("NetworkName".ljust(35),":",virtualnetwork_object.NetworkName.value()))
+        print(("NetworkVLANID".ljust(35),":",virtualnetwork_object.NetworkVLANID.value()))
+        print(("VswitchID".ljust(35),":",virtualnetwork_object.VswitchID.value()))
+        print(("TaggedNetwork".ljust(35),":",virtualnetwork_object.TaggedNetwork.value()))
         
 if __name__=="__main__":
     v=ListVirtualNetwork()

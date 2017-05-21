@@ -62,20 +62,20 @@ class ListManagedSystem(object):
         """
         object_list=self.object_list[choice]
         print("\n")
-        print("ManagedSystemName".ljust(35), ":",
-              object_list.SystemName.value())
-        print("ManagedSystem ID".ljust(35), ":",
-              object_list.Metadata.Atom.AtomID.value())
-        print("MachineType".ljust(35), ":",
-              object_list.MachineTypeModelAndSerialNumber.MachineType.value())
-        print("Model".ljust(35), ":",
-              object_list.MachineTypeModelAndSerialNumber.Model.value())
-        print("IPAddress".ljust(35), ":", object_list.PrimaryIPAddress.value())
-        print("SystemState".ljust(35), ":", object_list.State.value())
-        print("SerialNumber".ljust(35), ":",
-              object_list.MachineTypeModelAndSerialNumber.SerialNumber.value())
-        print("PhysicalSystemAttentionLEDState".ljust(35), ":",
-              object_list.PhysicalSystemAttentionLEDState.value())
+        print(("ManagedSystemName".ljust(35), ":",
+              object_list.SystemName.value()))
+        print(("ManagedSystem ID".ljust(35), ":",
+              object_list.Metadata.Atom.AtomID.value()))
+        print(("MachineType".ljust(35), ":",
+              object_list.MachineTypeModelAndSerialNumber.MachineType.value()))
+        print(("Model".ljust(35), ":",
+              object_list.MachineTypeModelAndSerialNumber.Model.value()))
+        print(("IPAddress".ljust(35), ":", object_list.PrimaryIPAddress.value()))
+        print(("SystemState".ljust(35), ":", object_list.State.value()))
+        print(("SerialNumber".ljust(35), ":",
+              object_list.MachineTypeModelAndSerialNumber.SerialNumber.value()))
+        print(("PhysicalSystemAttentionLEDState".ljust(35), ":",
+              object_list.PhysicalSystemAttentionLEDState.value()))
 
 
        

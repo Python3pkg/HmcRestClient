@@ -64,24 +64,24 @@ class ListLogicalPartitionProfile:
         """
         
         print("\n")
-        print("ProfileName".ljust(35),":",profile_object.ProfileName.value())
-        print("ProfileType".ljust(35),":",profile_object.ProfileType.value())
-        print("Maximum Memory".ljust(35),":",profile_object.ProfileMemory.MaximumMemory.value())
-        print("Desired Memory".ljust(35),":",profile_object.ProfileMemory.DesiredMemory.value())
-        print("Minimum Memory".ljust(35),":",profile_object.ProfileMemory.MinimumMemory.value())
-        print("HasDedicatedProcessors".ljust(35),":",
-              profile_object.ProcessorAttributes.HasDedicatedProcessors.value())
+        print(("ProfileName".ljust(35),":",profile_object.ProfileName.value()))
+        print(("ProfileType".ljust(35),":",profile_object.ProfileType.value()))
+        print(("Maximum Memory".ljust(35),":",profile_object.ProfileMemory.MaximumMemory.value()))
+        print(("Desired Memory".ljust(35),":",profile_object.ProfileMemory.DesiredMemory.value()))
+        print(("Minimum Memory".ljust(35),":",profile_object.ProfileMemory.MinimumMemory.value()))
+        print(("HasDedicatedProcessors".ljust(35),":",
+              profile_object.ProcessorAttributes.HasDedicatedProcessors.value()))
         if profile_object.ProcessorAttributes.HasDedicatedProcessors.value():
-            print("Maximum Processors".ljust(35),":",profile_object.ProcessorAttributes.\
-                                  DedicatedProcessorConfiguration.MaximumProcessors.value())
-            print("Desired Processors".ljust(35),":",profile_object.ProcessorAttributes.\
-                                  DedicatedProcessorConfiguration.DesiredProcessors.value())
-            print("Minimum Processors".ljust(35),":",profile_object.ProcessorAttributes.\
-                                  DedicatedProcessorConfiguration.MinimumProcessors.value())
+            print(("Maximum Processors".ljust(35),":",profile_object.ProcessorAttributes.\
+                                  DedicatedProcessorConfiguration.MaximumProcessors.value()))
+            print(("Desired Processors".ljust(35),":",profile_object.ProcessorAttributes.\
+                                  DedicatedProcessorConfiguration.DesiredProcessors.value()))
+            print(("Minimum Processors".ljust(35),":",profile_object.ProcessorAttributes.\
+                                  DedicatedProcessorConfiguration.MinimumProcessors.value()))
         else:
-            print("Maximum ProcessingUnits".ljust(35),":",profile_object.ProcessorAttributes.\
-                                  SharedProcessorConfiguration.MaximumProcessingUnits.value())
-            print("Desired ProcessingUnits".ljust(35),":",profile_object.ProcessorAttributes.\
-                                  SharedProcessorConfiguration.DesiredProcessingUnits.value())
-            print("Minimum ProcessingUnits".ljust(35),":",profile_object.ProcessorAttributes.\
-                                  SharedProcessorConfiguration.MinimumProcessingUnits.value())
+            print(("Maximum ProcessingUnits".ljust(35),":",profile_object.ProcessorAttributes.\
+                                  SharedProcessorConfiguration.MaximumProcessingUnits.value()))
+            print(("Desired ProcessingUnits".ljust(35),":",profile_object.ProcessorAttributes.\
+                                  SharedProcessorConfiguration.DesiredProcessingUnits.value()))
+            print(("Minimum ProcessingUnits".ljust(35),":",profile_object.ProcessorAttributes.\
+                                  SharedProcessorConfiguration.MinimumProcessingUnits.value()))

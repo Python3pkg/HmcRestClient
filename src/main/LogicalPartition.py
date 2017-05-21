@@ -65,7 +65,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
     if n == 1:
         #Logical Partition operations
         while True:
-            print ("\n\n","LogicalPartition operations".center(50))
+            print(("\n\n","LogicalPartition operations".center(50)))
             print_list = ['List','Create','Delete','Poweron',
                          'Poweroff','Modify','Return to LogicalPartition Menu',
                           'Return to ManagedSystem Menu','Return to MainMenu','Help','Exit']
@@ -85,13 +85,13 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
             elif x == 2:
                 #object creation and method call to create Logicalpartition
                  try:
-                     print("\nLogical Partition will be created with Following configruations,\n maximum,mimimum and desired memory = 256",
-                           "\nShared processors,Minimum,Desired and maximum processing units = 0.5,\npartition type = AIX/Linux")
+                     print(("\nLogical Partition will be created with Following configruations,\n maximum,mimimum and desired memory = 256",
+                           "\nShared processors,Minimum,Desired and maximum processing units = 0.5,\npartition type = AIX/Linux"))
                      logicalpartition_object = CreatePartition.CreatePartition("LogicalPartition")
                      created_logicalpartition_object = logicalpartition_object.create_Partition(ip,
                                                                                                 managedsystem_uuid,
                                                                                                 x_api_session)
-                     print("\nPartition %s Created Successfully\n"%(created_logicalpartition_object.PartitionName.value()))
+                     print(("\nPartition %s Created Successfully\n"%(created_logicalpartition_object.PartitionName.value())))
                      listlogicalpartition_object.print_logicalpartition_attributes(created_logicalpartition_object)
                  except (TypeError,AttributeError) :
                      log_object.log_error("Error in lpar creation")
@@ -120,11 +120,11 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                  for i in range(0,len(object_list)):
                          if object_list[i].PartitionState.value() == "not activated":
                              k = k+1
-                             print("%s.%s" % (k,object_list[i].PartitionName.value()))
+                             print(("%s.%s" % (k,object_list[i].PartitionName.value())))
                              inactive_object_list.append(object_list[i])
                  if k>0:
                     try:
-                         c = int(input("\nSelect any partition index the operation to be performed:"))
+                         c = int(eval(input("\nSelect any partition index the operation to be performed:")))
                          if c > 0:
                              ch = c-1               
                              selected_logicalpartition_object = inactive_object_list[ch]
@@ -152,11 +152,11 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                  for i in range(0,len(object_list)):
                         if object_list[i].PartitionState.value() == "open firmware" or object_list[i].PartitionState.value() == "running":
                              k = k+1
-                             print("%s.%s" % (k,object_list[i].PartitionName.value()))
+                             print(("%s.%s" % (k,object_list[i].PartitionName.value())))
                              active_object_list.append(object_list[i])
                  if k>0 :
                      try:
-                         c = int(input("\nSelect any partition index the operation to be performed:"))
+                         c = int(eval(input("\nSelect any partition index the operation to be performed:")))
                          if c > 0:
                              ch = c-1
                              selected_logicalpartition_object = active_object_list[ch]
@@ -197,7 +197,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                       os.system("cls")
                       return 3
             elif x == 10:
-                 print(open(directory+"/help/LogicalPartition/LogicalPartitionOperations.txt").read())
+                 print((open(directory+"/help/LogicalPartition/LogicalPartitionOperations.txt").read()))
             elif x == 11:
                 sys.exit(1)
             else:
@@ -209,7 +209,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
     elif n == 2:
         #LogicalPartition Profile operations
         while True:
-             print ("\n\n","LogicalPartition Profile".center(50))
+             print(("\n\n","LogicalPartition Profile".center(50)))
              print_list = ['List','Create',
                            'Modify','Return to LogicalPartition Menu',
                            'Return to ManagedSystem Menu','Return to MainMenu',
@@ -242,9 +242,9 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                  elif x1 == 2:
                      # object creation and method call to create LPAR Profile
                      if selected_logicalpartition_object != None:
-                         print("\nLogical Partition profile will be created with Following configruations,",
+                         print(("\nLogical Partition profile will be created with Following configruations,",
                                "\n maximum,mimimum and desired memory = 256",
-                               "\nprofile type = REG_LPAR_PROFILE_TYPE")
+                               "\nprofile type = REG_LPAR_PROFILE_TYPE"))
                          create_logicalpartitionprofile_object = CreateLogicalPartitionProfile.\
                                                                  CreateLogicalPartitionProfile("LogicalPartition")
                          created_logicalpartitionprofile_object = create_logicalpartitionprofile_object.\
@@ -252,7 +252,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                                                  selected_logicalpartition_object,
                                                                                                  x_api_session)
                          if created_logicalpartitionprofile_object != None :
-                             print("\nProfile %s Created Successfully\n"%(created_logicalpartitionprofile_object.ProfileName.value()))
+                             print(("\nProfile %s Created Successfully\n"%(created_logicalpartitionprofile_object.ProfileName.value())))
                              list_logicalpartitionprofile_object.\
                                             print_logicalpartitionprofile_attributes(created_logicalpartitionprofile_object)
                          
@@ -265,9 +265,9 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                    x_api_session)
                           print("\nAvailable LogicalPartitionProfile:")
                           for i in range(0,len(profile_object_list)):
-                               print("%s.%s"%(i+1,profile_object_list[i].ProfileName.value()))
+                               print(("%s.%s"%(i+1,profile_object_list[i].ProfileName.value())))
                           try:
-                              ch=int(input("\nselect any profile index to modify :"))
+                              ch=int(eval(input("\nselect any profile index to modify :")))
                               print("\nLogical partition profile memory attributes are modified as maximum ,minimum ,desired memory = 512")
                               modify_logicalpartitionprofile_object = ModifyLogicalPartitionProfile.\
                                                                       ModifyLogicalPartitionProfile("LogicalPartition")
@@ -293,7 +293,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                       os.system("cls")
                       return 3
                  elif x1 == 7:
-                      print(open(directory+"/help/LogicalPartitionProfile.txt").read())
+                      print((open(directory+"/help/LogicalPartitionProfile.txt").read()))
                  elif x1 == 8:
                      sys.exit(1)
                  else:
@@ -307,7 +307,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
     elif n == 3:
         #ClientNetworkAdapter operations
         while True:
-            print ("\n\n","ClientNetworkAdapter".center(50))
+            print(("\n\n","ClientNetworkAdapter".center(50)))
             print_list = ['List','Create','Return to LogicalPartition Menu',
                           'Return to ManagedSystem Menu','Return to MainMenu','Help','Exit']
             #select any ClientNetworkAdapter operation
@@ -352,7 +352,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                       os.system("cls")
                       return 3
             elif x1 == 6:
-                 print(open(directory+"/help/LogicalPartition/ClientNetworkAdapter.txt").read())
+                 print((open(directory+"/help/LogicalPartition/ClientNetworkAdapter.txt").read()))
             elif x1 == 7:
                 sys.exit(1)
             else:
@@ -361,7 +361,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
     elif n == 4:
         #virtual scsi adapter operations
         while True:
-            print ("\n\n","VirtualSCSIClientAdapter".center(50))
+            print(("\n\n","VirtualSCSIClientAdapter".center(50)))
             print_list = ['List','Create','Return to LogicalPartition Menu',
                           'Return to ManagedSystem Menu','Return to MainMenu','Help','Exit']
             #select any VirtualSCSIClientAdapter operation
@@ -386,8 +386,8 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                                    lpar_id,
                                                                                    x_api_session)
                     if object_list != None:
-                        print("\nDetails of Available VirtualSCSIClientAdapters  :",
-                              "\n--------------------------------------------------")
+                        print(("\nDetails of Available VirtualSCSIClientAdapters  :",
+                              "\n--------------------------------------------------"))
                         for i in range(0,len(object_list)):
                             vscsi_list_object.print_vscsi_attributes(object_list[i])
                     else :
@@ -412,7 +412,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                       os.system("cls")
                       return 3
             elif x1 == 6:
-                 print(open(directory+"/help/LogicalPartition/VirtualSCSIAdapter.txt").read())
+                 print((open(directory+"/help/LogicalPartition/VirtualSCSIAdapter.txt").read()))
             elif x1 == 7:
                 sys.exit(1)
             else:
@@ -422,7 +422,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
     elif n == 5:
         while True:
             #virtual fibre channel adapter operations
-            print ("\n\n","VirtualFibreChannelClientAdapter".center(50))
+            print(("\n\n","VirtualFibreChannelClientAdapter".center(50)))
             print_list = ['List','Create','Return to LogicalPartition Menu',
                           'Return to ManagedSystem Menu','Return to MainMenu','Help','Exit']
             #select any VirtualFibreChannelClientAdapter operation
@@ -447,8 +447,8 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                          lpar_id,
                                                                          x_api_session)
                     if object_list != None:
-                        print("\nDetails of Available VirtualFibreChannelClientAdapters  :",
-                              "\n------------------------------------------------------")
+                        print(("\nDetails of Available VirtualFibreChannelClientAdapters  :",
+                              "\n------------------------------------------------------"))
                         for i in range(0,len(object_list)):
                             vfc_list_object.print_virtualfibrechannel_attributes(object_list[i])
                     else :
@@ -473,7 +473,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                       os.system("cls")
                       return 3
             elif x1 == 6:
-                 print(open(directory+"/help/LogicalPartition/VirtualFibreChannelAdapter.txt").read())
+                 print((open(directory+"/help/LogicalPartition/VirtualFibreChannelAdapter.txt").read()))
             elif x1 == 7:
                 sys.exit(1)
             else:
@@ -483,7 +483,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
     elif n == 6:
         #SRIOV ethernet Logical Port operations
         while True:
-            print ("\n\n","SRIOV Ethernet Logical Port".center(50))
+            print(("\n\n","SRIOV Ethernet Logical Port".center(50)))
             print_list = ['List','Create','Clear Statistics','Modify',
                           'Return to LogicalPartition Menu',
                           'Return to ManagedSystem Menu',
@@ -511,7 +511,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                     try:
                         for i in range(0,len(sriov_list)):
                             sriov_logicalPort.print_sriov_logical_port(sriov_list[i])
-                    except (TypeError , AttributeError)as e:
+                    except (TypeError , AttributeError) as e:
                          log_object.log_warn("No SRIOV LogicalPorts are available")
                          
             elif x1 == 2:
@@ -532,8 +532,8 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                            x_api_session)
                     try:
                         for i in range(0,len(sriov_list)):
-                            print("%s.ConfigurationID %s"%(i+1,sriov_list[i].ConfigurationID.value()))
-                        ch = int(input("Select a SRIOV Port to clear statistics :"))
+                            print(("%s.ConfigurationID %s"%(i+1,sriov_list[i].ConfigurationID.value())))
+                        ch = int(eval(input("Select a SRIOV Port to clear statistics :")))
                         if ch > 0 and ch <= len(sriov_list):
                             sriov_uuid = sriov_list[ch-1].Metadata.Atom.AtomID.value()
                             clear_statistics = ClearSRIOVLogicalPortStatistics.\
@@ -544,7 +544,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                                 x_api_session)
                         else:
                             print("\nTry again using valid option")
-                    except (TypeError , AttributeError)as e:
+                    except (TypeError , AttributeError) as e:
                          log_object.log_warn("No SRIOV LogicalPorts are available")
                          
             elif x1 == 4:
@@ -556,15 +556,15 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                            x_api_session)
                     try:
                         for i in range(0,len(sriov_list)):
-                            print("%s.ConfigurationID %s"%(i+1,sriov_list[i].ConfigurationID.value()))
-                        ch = int(input("Select a SRIOV Port to modify :"))
+                            print(("%s.ConfigurationID %s"%(i+1,sriov_list[i].ConfigurationID.value())))
+                        ch = int(eval(input("Select a SRIOV Port to modify :")))
                         if ch > 0 and ch <= len(sriov_list):
                             modify_sriov = ModifySRIOVEthernetLogicalPort.ModifySRIOVEthernetLogicalPort()
                             modify_sriov.modify_sriov_logicalport(ip,
                                                                   lpar_uuid,
                                                                   sriov_list[ch-1],
                                                                   x_api_session)
-                    except (TypeError , AttributeError)as e:
+                    except (TypeError , AttributeError) as e:
                          log_object.log_warn("No SRIOV LogicalPorts are available")
                          print(e)
                          
@@ -578,7 +578,7 @@ def logicalpartition_children(n1, managedsystem_uuid, ip, x_api_session):
                       os.system("cls")
                       return 3
             elif x1 == 8:
-                 print(open(directory+"/help/LogicalPartition/SRIOVEthernetLogicalPort.txt").read())
+                 print((open(directory+"/help/LogicalPartition/SRIOVEthernetLogicalPort.txt").read()))
             elif x1 == 9 :
                 sys.exit(1)
             else:

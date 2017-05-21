@@ -55,16 +55,16 @@ class ListVolumeGroup:
         prints the details of the given volume group object
         """
         print("\n")
-        print("VolumeGroup Name".ljust(35),":",volumegroup_object.GroupName.value())
+        print(("VolumeGroup Name".ljust(35),":",volumegroup_object.GroupName.value()))
         print("\nPHYSICAL VOLUMES : \n--------------------")
         for physicalvolume in volumegroup_object.PhysicalVolumes.PhysicalVolume:
-            print("PhysicalVolume Name".ljust(35),":",physicalvolume.VolumeName.value())
-            print("PhysicalVolume Capacity".ljust(35),":",physicalvolume.VolumeCapacity.value())
+            print(("PhysicalVolume Name".ljust(35),":",physicalvolume.VolumeName.value()))
+            print(("PhysicalVolume Capacity".ljust(35),":",physicalvolume.VolumeCapacity.value()))
             print("\n")
         if volumegroup_object.VirtualDisks.VirtualDisk != []:
             print("\nVIRTUAL DISKS :\n-----------------")
         for virtualdisk in volumegroup_object.VirtualDisks.VirtualDisk:
-            print("DiskName".ljust(35),":",virtualdisk.DiskName.value())
-            print("DiskCapacity".ljust(35),":",virtualdisk.DiskCapacity.value())
+            print(("DiskName".ljust(35),":",virtualdisk.DiskName.value()))
+            print(("DiskCapacity".ljust(35),":",virtualdisk.DiskCapacity.value()))
             print("\n")
             

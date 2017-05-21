@@ -59,7 +59,7 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
             
     if n == 1:
         while True:
-            print ("\n\n","VirtualIOServer operations".center(50))
+            print(("\n\n","VirtualIOServer operations".center(50)))
             print_list = ['List','Create','Modify',
                           'Poweron','Poweroff','Return to vios menu',
                           'Return to ManagedSystem menu','Return to MainMenu','Help','Exit' ]
@@ -81,11 +81,11 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                 elif x == 2:
                      #object creation and method call to create vios
                     try:
-                         print("\nVirtualIOServer will be created with Following configruations,\n maximum,mimimum and desired memory = 256",
-                               "\nShared processors,Minimum,Desired and maximum processing units = 0.5")
+                         print(("\nVirtualIOServer will be created with Following configruations,\n maximum,mimimum and desired memory = 256",
+                               "\nShared processors,Minimum,Desired and maximum processing units = 0.5"))
                          logicalpartition_object = CreatePartition.CreatePartition("VirtualIOServer")
                          created_logicalpartition_object = logicalpartition_object.create_Partition(ip,managedsystem_uuid,x_api_session)
-                         print("\nPartition %s Created Successfully\n"%(created_logicalpartition_object.PartitionName.value()))
+                         print(("\nPartition %s Created Successfully\n"%(created_logicalpartition_object.PartitionName.value())))
                     except (TypeError,AttributeError) :
                          log_object.log_error("Error in VIOS creation")
                  
@@ -112,11 +112,11 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                      for i in range(0,len(object_list)):
                              if object_list[i].PartitionState.value() == "not activated":
                                  k = k+1
-                                 print("%s.%s" % (k,object_list[i].PartitionName.value()))
+                                 print(("%s.%s" % (k,object_list[i].PartitionName.value())))
                                  inactive_object_list.append(object_list[i])
                      if k>0:
                         try:
-                             c = int(input("\nSelect any partition index the operation to be performed:"))
+                             c = int(eval(input("\nSelect any partition index the operation to be performed:")))
                              if c > 0:
                                  ch = c-1               
                                  selected_vios = inactive_object_list[ch]
@@ -141,11 +141,11 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                          for i in range(0,len(object_list)):
                                 if object_list[i].PartitionState.value() == "open firmware" or object_list[i].PartitionState.value() == "running":
                                      k = k+1
-                                     print("%s.%s" % (k,object_list[i].PartitionName.value()))
+                                     print(("%s.%s" % (k,object_list[i].PartitionName.value())))
                                      active_object_list.append(object_list[i])
                          if k>0 :
                              try:
-                                 c = int(input("\nSelect any VIOS index the operation to be performed:"))
+                                 c = int(eval(input("\nSelect any VIOS index the operation to be performed:")))
                                  if c > 0:
                                      ch = c-1
                                      selected_vios = active_object_list[ch]
@@ -165,7 +165,7 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                     os.system("cls")
                     return 3
                 elif x == 9:
-                    print(open(directory+"/help/VirtualIOServer/VirtualIOServerOperations.txt").read())
+                    print((open(directory+"/help/VirtualIOServer/VirtualIOServerOperations.txt").read()))
                 elif x == 10:
                     sys.exit(1)
                 else:
@@ -178,7 +178,7 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                 
     elif n == 2:
         while True:
-            print ("\n\n","LogicalPartitionProfile".center(50))
+            print(("\n\n","LogicalPartitionProfile".center(50)))
             print_list = ['List','Create','Modify','Return to vios menu',
                           'Return to ManagedSystem menu','Return to MainMenu',
                           'Help','Exit']
@@ -205,15 +205,15 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
             elif x1 == 2:
                  #object creation and method call to create profile in the selected vios
                 if selected_vios != None:
-                    print("\nLogical Partition profile is created with Following configruations,\n maximum,mimimum and desired memory = 256",
-                           "\nprofile type = REG_LPAR_PROFILE_TYPE")
+                    print(("\nLogical Partition profile is created with Following configruations,\n maximum,mimimum and desired memory = 256",
+                           "\nprofile type = REG_LPAR_PROFILE_TYPE"))
                     create_logicalpartitionprofile_object = CreateLogicalPartitionProfile.\
                                                             CreateLogicalPartitionProfile("VirtualIOServer")
                     created_logicalpartitionprofile_object = create_logicalpartitionprofile_object.\
                                                              create_LogicalPartitionProfile(ip,selected_vios,x_api_session)
                     if created_logicalpartitionprofile_object != None:
-                        print("\nProfile %s Created Successfully\n"%(created_logicalpartitionprofile_object.\
-                                                                     ProfileName.value()))
+                        print(("\nProfile %s Created Successfully\n"%(created_logicalpartitionprofile_object.\
+                                                                     ProfileName.value())))
                         list_logicalpartitionprofile_object.\
                                     print_logicalpartitionprofile_attributes(created_logicalpartitionprofile_object)
                
@@ -225,9 +225,9 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                     list_LogicalPartitionProfile(ip,partition_id, x_api_session)
                     print("\nAvailable LogicalPartitionProfile:")
                     for i in range(0,len(profile_object_list)):
-                        print("%s.%s"%(i+1,profile_object_list[i].ProfileName.value()))
+                        print(("%s.%s"%(i+1,profile_object_list[i].ProfileName.value())))
                     try:
-                        ch=int(input("\nselect any profile index to modify :"))
+                        ch=int(eval(input("\nselect any profile index to modify :")))
                         print("\nLogical partition profile memory attributes are modified as maximum ,minimum ,desired memory = 512")
                         modify_logicalpartitionprofile_object = ModifyLogicalPartitionProfile.\
                                                                 ModifyLogicalPartitionProfile("VirtualIOServer")
@@ -253,7 +253,7 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                     os.system("cls")
                     return 3
             elif x1 == 6:
-                print(open(directory+"/help/LogicalPartitionProfile.txt").read())
+                print((open(directory+"/help/LogicalPartitionProfile.txt").read()))
             elif x1 == 7:
                 sys.exit(1)
             else:
@@ -262,7 +262,7 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                 
     elif n == 3:
         while True:
-            print ("\n\n","VolumeGroup".center(50))
+            print(("\n\n","VolumeGroup".center(50)))
             print_list = ['List','Create','Modify','Return to vios menu',
                           'Return to ManagedSystem menu',
                           'Return to MainMenu','Help','Exit']
@@ -285,8 +285,8 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                                 x_api_session)
                     try:
                         for i in range(0,len(volumegroup_list)):
-                            print("%s.%s"%(i+1,volumegroup_list[i].GroupName.value()))
-                        ch = int(input("\nEnter your choice :"))
+                            print(("%s.%s"%(i+1,volumegroup_list[i].GroupName.value())))
+                        ch = int(eval(input("\nEnter your choice :")))
                         volumegroup_list_object.print_volumegroup_attributes(volumegroup_list[ch-1])
                     except TypeError:
                         log_object.log_warn("No VolumeGroups are available")
@@ -314,10 +314,10 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                                                                                 x_api_session)
                 if  volumegroup_list != None:
                     for i in range(0,len(volumegroup_list)):
-                         print("%s.%s"%(i+1,volumegroup_list[i].GroupName.value()))
-                    choice = int(input("\nEnter your choice :"))
+                         print(("%s.%s"%(i+1,volumegroup_list[i].GroupName.value())))
+                    choice = int(eval(input("\nEnter your choice :")))
                     selected_volumegroup = volumegroup_list[choice-1]
-                    ch = int(input("\n1.Add PhysicalVolume to VolumeGroup\n2.Create VirtualDisk in VolumeGroup\nEnter your choice :"))
+                    ch = int(eval(input("\n1.Add PhysicalVolume to VolumeGroup\n2.Create VirtualDisk in VolumeGroup\nEnter your choice :")))
                     if ch == 1:
                         volumegroup_modify_object.add_physicalvolume(ip, vios_id, x_api_session, selected_volumegroup)
                     elif ch == 2:
@@ -340,7 +340,7 @@ def virtualioserver_children(n1, managedsystem_uuid, ip, x_api_session):
                     os.system("cls")
                     return 3
             elif x1 == 7:
-                print(open(directory+"/help/VirtualIOServer/VolumeGroup.txt").read())
+                print((open(directory+"/help/VirtualIOServer/VolumeGroup.txt").read()))
                 back_to_menu()
             elif x1 == 8:
                 sys.exit(1)

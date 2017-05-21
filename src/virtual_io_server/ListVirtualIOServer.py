@@ -71,39 +71,39 @@ class ListVirtualIOServer:
         log_object.log_debug("Print VirtualIOServer" +
                              "details that user has selected")
         print("\n")
-        print("PartitionName".ljust(35), ":",
-              vios_object.PartitionName.value())
-        print("PartitionID".ljust(35), ":", vios_object.PartitionID.value())
-        print("PartitionType".ljust(35), ":",
-              vios_object.PartitionType.value())
-        print("PartitionUUID".ljust(35), ":",
-              vios_object.PartitionUUID.value())
-        print("IsVirtualServiceAttentionLEDOn".ljust(35), ":", vios_object.
-              IsVirtualServiceAttentionLEDOn.value())
-        print("APICapable".ljust(35), ":", vios_object.APICapable.value())
-        print("PartitionState".ljust(35), ":",
-              vios_object.PartitionState.value())
-        print("AssociatedManagedSystem".ljust(35), ":",
-              vios_object.AssociatedManagedSystem.href)
-        print("Maximum Memory".ljust(35), ":",
-              vios_object.PartitionMemoryConfiguration.MaximumMemory.value())
-        print("Desired Memory".ljust(35), ":",
-              vios_object.PartitionMemoryConfiguration.DesiredMemory.value())
-        print("Minimum Memory".ljust(35), ":",
-              vios_object.PartitionMemoryConfiguration.MinimumMemory.value())
-        print("HasDedicatedProcessors ".ljust(35), ":",
+        print(("PartitionName".ljust(35), ":",
+              vios_object.PartitionName.value()))
+        print(("PartitionID".ljust(35), ":", vios_object.PartitionID.value()))
+        print(("PartitionType".ljust(35), ":",
+              vios_object.PartitionType.value()))
+        print(("PartitionUUID".ljust(35), ":",
+              vios_object.PartitionUUID.value()))
+        print(("IsVirtualServiceAttentionLEDOn".ljust(35), ":", vios_object.
+              IsVirtualServiceAttentionLEDOn.value()))
+        print(("APICapable".ljust(35), ":", vios_object.APICapable.value()))
+        print(("PartitionState".ljust(35), ":",
+              vios_object.PartitionState.value()))
+        print(("AssociatedManagedSystem".ljust(35), ":",
+              vios_object.AssociatedManagedSystem.href))
+        print(("Maximum Memory".ljust(35), ":",
+              vios_object.PartitionMemoryConfiguration.MaximumMemory.value()))
+        print(("Desired Memory".ljust(35), ":",
+              vios_object.PartitionMemoryConfiguration.DesiredMemory.value()))
+        print(("Minimum Memory".ljust(35), ":",
+              vios_object.PartitionMemoryConfiguration.MinimumMemory.value()))
+        print(("HasDedicatedProcessors ".ljust(35), ":",
               vios_object.PartitionProcessorConfiguration.
-              HasDedicatedProcessors.value())
+              HasDedicatedProcessors.value()))
         if vios_object.PartitionProcessorConfiguration.\
            HasDedicatedProcessors.value() == True:
-            print("Maximum Processors".ljust(35), ":",
+            print(("Maximum Processors".ljust(35), ":",
                   vios_object.PartitionProcessorConfiguration.
-                  DedicatedProcessorConfiguration.MaximumProcessors.value())
-            print("Desired Processors".ljust(35), ":",
+                  DedicatedProcessorConfiguration.MaximumProcessors.value()))
+            print(("Desired Processors".ljust(35), ":",
                   vios_object.PartitionProcessorConfiguration.
-                  DedicatedProcessorConfiguration.DesiredProcessors.value())
-            print("Minimum Processors".ljust(35), ":",
+                  DedicatedProcessorConfiguration.DesiredProcessors.value()))
+            print(("Minimum Processors".ljust(35), ":",
                   vios_object.PartitionProcessorConfiguration.
-                  DedicatedProcessorConfiguration.MinimumProcessors.value())
+                  DedicatedProcessorConfiguration.MinimumProcessors.value()))
 
 

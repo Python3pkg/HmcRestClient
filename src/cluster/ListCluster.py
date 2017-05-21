@@ -52,13 +52,13 @@ class ListCluster:
         print the details of the given cluster object
         """
         print("\n")
-        print("ClusterName".ljust(35),":",objects.ClusterName.value())
-        print("Repository Disk".ljust(35),":", \
-              objects.RepositoryDisk.PhysicalVolume[0].VolumeName.value())
+        print(("ClusterName".ljust(35),":",objects.ClusterName.value()))
+        print(("Repository Disk".ljust(35),":", \
+              objects.RepositoryDisk.PhysicalVolume[0].VolumeName.value()))
         print("\nNodes in the cluster :\n-----------------------")
         for Node in objects.Node.Node :
-            print("HostName".ljust(35),":",\
-                  Node.HostName.value())
-            print("PartitionID".ljust(35),":", \
-                  Node.PartitionID.value())
+            print(("HostName".ljust(35),":",\
+                  Node.HostName.value()))
+            print(("PartitionID".ljust(35),":", \
+                  Node.PartitionID.value()))
             print()
